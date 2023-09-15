@@ -25,9 +25,7 @@ void cadastrar(Veiculo &veiculo, vector<Veiculo> &veiculos);
 
 void listar(vector<Veiculo> &veiculos);
 
-void editar(vector<Veiculo> &veiculos);
 
-void remover(vector<Veiculo> *veiculos);
 
 void veiculoComportamentos(vector<Veiculo> &veiculos);
 
@@ -126,84 +124,6 @@ void listar(vector<Veiculo> &veiculos)
     pause();
 }
 
-void editar(vector<Veiculo> &veiculos)
-{
-    limparTela();
-    auto it = veiculos.begin();
-
-    if (veiculos.empty())
-    {
-        cout << "\nNenhum veiculo cadastrado!\n";
-        pause();
-        return;
-    }
-
-    int id = 0;
-
-    cout << "\n===============EDITAR===============\n";
-
-    cout << "\nInforme o id do veiculo para pesquisar: ";
-    cin >> id;
-    cin.get();
-    limparTela();
-
-    *it = retornarVeiculo(veiculos, id);
-
-    if (it->id == id)
-    {
-        cout << "\n==========EDITAR VEICULOS==========\n";
-        cout << "\nInforme a marca do veículo: ";
-        getline(cin, it->marca.assign(it->marca));
-
-        cout << "\nInforme o modelo do veiculo: ";
-        getline(cin, it->modelo.assign(it->modelo));
-
-        cout << "\nInforme a cor do veiculo: ";
-        getline(cin, it->cor.assign(it->cor));
-
-        cout << "\nInforme a placa do veiculo: ";
-        getline(cin, it->placa.assign(it->placa));
-
-        pause();
-    }
-    else
-    {
-        cout << "\nVeiculo não encontrado!\n";
-        pause();
-        return;
-    }
-}
-
-void remover(vector<Veiculo> &veiculos)
-{
-    limparTela();
-    int id = 0;
-    auto it = veiculos.begin();
-
-    if (veiculos.empty())
-    {
-        cout << "\nNenhum veiculo cadastrado!\n";
-        pause();
-        return;
-    }
-
-    cout << "\n===============REMOVER===============\n";
-
-    cout << "\nInforme o id do veiculo para remover: ";
-    cin >> id;
-    cin.get();
-    limparTela();
-
-    *it = retornarVeiculo(veiculos, id);
-
-    if (it->id == id)
-    {
-        veiculos.erase(it);
-        cout << "\nVeiculo removido com sucesso!\n";
-        pause();
-        return;
-    }
-}
 
 void veiculoComportamentos(vector<Veiculo> &veiculos)
 {
