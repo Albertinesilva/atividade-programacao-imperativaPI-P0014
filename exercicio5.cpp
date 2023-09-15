@@ -25,7 +25,9 @@ void cadastrar(Veiculo &veiculo, vector<Veiculo> &veiculos);
 
 void listar(vector<Veiculo> &veiculos);
 
+void editar(vector<Veiculo> &veiculos);
 
+void remover(vector<Veiculo> &veiculos);
 
 void veiculoComportamentos(vector<Veiculo> &veiculos);
 
@@ -123,6 +125,7 @@ void listar(vector<Veiculo> &veiculos)
     }
     pause();
 }
+
 
 
 void veiculoComportamentos(vector<Veiculo> &veiculos)
