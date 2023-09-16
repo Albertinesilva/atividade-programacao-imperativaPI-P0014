@@ -12,6 +12,11 @@ int menu();
 
 void limparTela();
 
+void soma();
+void subtracao();
+void multiplicacao();
+void divisao();
+
 void calculadora(double &x, double &y);
 
 int main()
@@ -54,54 +59,22 @@ void calculadora(double &x, double &y)
         {
         case 1:
 
-            limparTela();
-            cout << "Informe o minuendo: ";
-            cin >> x;
-
-            cout << "Informe o subtraendo: ";
-            cin >> y;
-
-            cout << "Soma = " << x + y << endl;
-            cout << endl;
+            soma();
 
             break;
 
         case 2:
 
-            limparTela();
-            cout << "Informe o minuendo: ";
-            cin >> x;
-
-            cout << "Informe o subtraendo: ";
-            cin >> y;
-
-            cout << "Diferença = " << x - y << endl;
-
+            subtracao();
             break;
 
         case 3:
 
-            limparTela();   
-            cout << "Informe o multiplicando: ";
-            cin >> x;
-
-            cout << "Informe o multiplicador: ";
-            cin >> y;
-
-            cout << "Produto = " << x * y << endl;
-
+            multiplicacao();
             break;
         case 4:
 
-            limparTela();
-            cout << "Informe o dividendo: ";
-            cin >> x;
-
-            cout << "Informe o divisor: ";
-            cin >> y;
-
-            cout << "Quociente = " << x / y << endl;
-            cout << endl;
+            divisao();
 
             break;
 
@@ -117,4 +90,49 @@ void calculadora(double &x, double &y)
             break;
         }
     } while (opcao != 8);
+
+}
+
+void multiplicacao(){
+    float x,y;
+    cout << "Entre com o valor de do primeiro numero: " ;
+    cin >> x;
+    
+    cout << "Entre com o valor de do segundo numero: " ;
+    cin >> y;
+
+    cout << "Multiplicação entre "<< x << " e " << y << " : " << x*y;
+}
+
+void divisao(){
+    float x,y;
+    cout << "Entre com o valor de do primeiro numero: " ;
+    cin >> x;
+    
+    cout << "Entre com o valor de do segundo numero: " ;
+    cin >> y;
+
+    cout << "Divisão entre "<< x << " e " << y << " : " << x/y;
+}
+
+void soma(){
+    float x,y;
+    cout << "Entre com o valor de do primeiro numero: " ;
+    cin >> x;
+    
+    cout << "Entre com o valor de do segundo numero: " ;
+    cin >> y;
+
+    cout << "Soma entre "<< x << " e " << y << " : " << x+y;
+}
+
+void subtração(){
+    float x,y;
+    cout << "Entre com o valor de do primeiro numero: " ;
+    cin >> x;
+    
+    cout << "Entre com o valor de do segundo numero: " ;
+    cin >> y;
+
+    cout << "Subtração entre "<< x << " e " << y << " : " << x-y;
 }
